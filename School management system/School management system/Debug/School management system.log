@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\Sebi\source\repos\School management system\School management system\Source.cpp(95,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Sebi\source\repos\School management system\School management system\Source.cpp(125,22): warning C4018: '<': signed/unsigned mismatch
+  School management system.vcxproj -> C:\Users\Sebi\source\repos\School management system\Debug\School management system.exe
