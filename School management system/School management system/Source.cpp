@@ -154,14 +154,44 @@ int main()
 			}
 		cin >> ans;
 		ans -= 1;
-		for (int i = 0; i < int(clase.at(ans).elevi.size()); i++)
+		for (int i = 0; i < clase.at(ans).elevi.size(); i++)
 		{
 			cout << "Elevul " << i + 1 << " : " << clase.at(ans).elevi.at(i).nume << endl;
 		}
 		system("pause");
+		break;
 		}
 		case 7: {
-			
+			system("cls");
+			int ans1, ans2, ok = 0;
+			cout << "\t \t \t Alegeti din ce clasa doriti situatia: " << endl;
+			for (int i = 0; i < int(clase.size()); i++)
+				cout << "Optiunea " << i + 1 << " : " << clase.at(i).cls << endl;
+			cin >> ans1;
+			ans1 -= 1;
+			cout << "\t \t \t Alegeti pentru ce elev doriti situatia: " << endl;
+			for (int i = 0; i < int(clase.at(ans1).elevi.size()); i++)
+				cout << "Elevul " << i + 1 << " " << clase.at(ans1).elevi.at(i).nume << endl;
+			cin >> ans2;
+			ans2 -= 1;
+			for (int i = 0; i < EleviNotati.size(); i++)
+			{
+				if (EleviNotati.at(i).getCNP() == clase.at(ans1).elevi.at(ans2).getCNP())
+					/* caut in elevinotati daca a primit vreo nota, daca da, il sterg din clasa si il inlocuiesc.
+					* afisez nota la o materie.
+						*/
+				{
+					ok = 1;
+					clase.at(ans1).elevi.erase(clase.at(ans1).elevi.begin() + ans2);
+					clase.at(ans1).elevi.push_back(EleviNotati.at(i));
+					clase.at(ans1).elevi.back().detalii();
+					break;
+				}
+			}
+			if (ok == 0)
+				cout << "ELEVUL NU ARE NICI O NOTA!" << endl;
+			system("pause");
+			break;
 		}
 		default:
 			break;
