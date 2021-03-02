@@ -40,7 +40,6 @@ void Elev::AdaugaNota(Materie m) {
 			cout << "Pentru materia: " << m.Nume << " se adauga nota: ";
 			cin >> n;
 			it->second.push_back(n);
-			cout << "MERGE";
 		}
 		else
 		{
