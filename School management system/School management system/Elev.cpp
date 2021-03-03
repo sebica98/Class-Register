@@ -25,7 +25,6 @@ void Elev::vezinote(Materie m) {
 	auto itr = this->note.find(m.Nume);
 	if (itr != this->note.end())
 	{
-		cout << "YAAA" << endl;
 		int max = itr->second.size();
 		for (int i = 0; i < max; i++)
 			cout << "Nota: " << itr->second.at(i) << " la disciplina: " << m.Nume << endl;
@@ -39,12 +38,22 @@ void Elev::AdaugaNota(Materie m) {
 		{
 			cout << "Pentru materia: " << m.Nume << " se adauga nota: ";
 			cin >> n;
+			while (n > 10 || n < 1)
+			{
+				cout << "Nota trebuie sa fie cuprinsa intre 1-10 !!!" << endl;
+				cin >> n;
+			}
 			it->second.push_back(n);
 		}
 		else
 		{
 			cout << "Pentru materia: " << m.Nume << " se adauga nota: ";
 			cin >> n;
+			while (n > 10 || n < 1)
+			{
+				cout << "Nota trebuie sa fie cuprinsa intre 1-10 !!!" << endl;
+				cin >> n;
+			}
 			cout << "Nota " << n << " A fost adaugata elevului " << this->nume << "!";
 			pair<string, vector<int>> p;
 			vector<int> v = { n };

@@ -112,7 +112,7 @@ int main()
 			ans1 -= 1;
 			cout << "\t \t \t Alegeti pentru ce elev doriti situatia: " << endl;
 			for (int i = 0; i < int(clase.at(ans1).elevi.size()); i++)
-				cout << "Elevul " << i + 1 << " " << clase.at(ans1).elevi.at(i).nume << endl;
+				cout << "Elevul " << i + 1 << " : " << clase.at(ans1).elevi.at(i).nume << endl;
 			cin >> ans2;
 			ans2 -= 1;
 			cout << "\t \t \t Alegeti la ce materie doriti sa aflati situatia: " << endl;
@@ -171,7 +171,7 @@ int main()
 			ans1 -= 1;
 			cout << "\t \t \t Alegeti pentru ce elev doriti situatia: " << endl;
 			for (int i = 0; i < int(clase.at(ans1).elevi.size()); i++)
-				cout << "Elevul " << i + 1 << " " << clase.at(ans1).elevi.at(i).nume << endl;
+				cout << "Elevul " << i + 1 << " : " << clase.at(ans1).elevi.at(i).nume << endl;
 			cin >> ans2;
 			ans2 -= 1;
 			for (int i = 0; i < EleviNotati.size(); i++)
