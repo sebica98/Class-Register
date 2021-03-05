@@ -1,7 +1,2 @@
-﻿  Clase.cpp
-  Elev.cpp
-C:\Users\Sebi\Documents\GitHub\Class-Register\School management system\School management system\Elev.cpp(28,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Materie.cpp
-  Source.cpp
-  Generating Code...
-  School management system.vcxproj -> C:\Users\Sebi\Documents\GitHub\Class-Register\School management system\x64\Debug\School management system.exe
+﻿  Source.cpp
+  School management system.vcxproj -> C:\Users\Sebi\Class-Register\School management system\x64\Debug\School management system.exe

@@ -14,6 +14,7 @@ int main()
 	vector<Clase> clase{};
 	vector<Elev> EleviNotati;
 	vector<Materie> MateriiNotate;
+	//citesc din fisier toti elevii
 	while (opt != 8)
 	{
 		cout << "\t\t Bun venit la Catalogul Online!" << endl;
@@ -35,7 +36,6 @@ int main()
 		cout << "Introduceti ce clasa doriti sa adaugati: ";
 		cin >> ans;
 		Clase cls = Clase(ans);
-		//elevifile << cls.cls << ' ';
 		cout << "Clasa a " << ans << "-a a fost adaugata!" << endl;
 		clase.push_back(cls);
 		system("pause");
@@ -53,7 +53,6 @@ int main()
 		ans -= 1;
 		clase.at(ans).adaugaElev(x);
 		x.setclasa(clase.at(ans));
-		elevifile << x.nume << endl;
 		system("pause");
 		break;
 		}
@@ -98,7 +97,6 @@ int main()
 				EleviNotati.erase(EleviNotati.begin()+i);
 		}
 			EleviNotati.push_back(cur.elevi.at(ans3));
-		//cur.elevi.back().detalii();
 		system("pause");
 		break;
 		}
@@ -199,6 +197,24 @@ int main()
 		system("cls");
 	}
 	cout << "Ati iesit din meniu cu succes!";
+	//adaug in fisier toti elevii
+	for (int i = 0; i < clase.size(); i++)
+	{
+		for (int j = 0; j < clase.at(i).elevi.size(); j++)
+		{
+			elevifile << clase.at(i).elevi.at(j).nume;
+			elevifile << clase.at(i).elevi.at(j).cls.cls;
+			for (auto it = clase.at(i).elevi.at(j).note.begin(); it != clase.at(i).elevi.at(j).note.end(); it++)
+			{
+				elevifile << it->first;
+				for (int i = 0; i < it->second.size(); i++)
+					elevifile << it->second.at(i);
+			}
+			for (int k = 0; k < clase.at(i).materii.size(); k++)
+				elevifile << clase.at(i).materii.at(k).Nume;
+			elevifile << endl;
+		}
+	}
 	elevifile.close();
 
 	return 0;
